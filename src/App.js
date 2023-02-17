@@ -17,12 +17,14 @@ const App = () => {
      < Person
          name='John'
          LastName={'Doe'}
-          Age={'25'}/>
+          Age={'25'}
+          />
 
      < Person 
         name="Mary" 
          LastName={'Doe'} 
-         Age={'25'}/>
+         Age={'25'}
+         />
 
     </div>
   );
