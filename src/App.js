@@ -7,9 +7,9 @@ import './app.css';
 import SearchIcon from './search.svg';
 
 
-const API = 'http://www.omdbapi.com/?i=tt3896198&apikey=5750106e';
+const API_URL = 'http://www.omdbapi.com/?i=tt3896198&apikey=5750106e';
 
-const movie1={
+const movie1 ={
     "Title": "Amazing Spiderman Syndrome",
     "Year": "2012",
     "imdbID": "tt2586634",
@@ -20,11 +20,13 @@ const movie1={
 const App = () => {
 
 const [movies, setMovies] = useState([]);
+const [searchTerm, setSearchTerm] = useState('');
+
 
     const searchMovies = async (title) => {
-        const response = await fetch(`${API}&s=${title}`);
+        const response = await fetch(`${API_URL}&s=${title}`);
         const data = await response.json();
-        setMovies(data.search);
+        setMovies(data.Search);
     }
 
     useEffect(() =>{
@@ -40,8 +42,8 @@ const [movies, setMovies] = useState([]);
 
                 <input
                     placeholder="Search for movies"
-                    value="Superman"
-                    onChange={() => {}}
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 <img 
                     src={SearchIcon}
