@@ -9,13 +9,13 @@ import SearchIcon from './search.svg';
 
 const API_URL = 'http://www.omdbapi.com/?i=tt3896198&apikey=5750106e';
 
-const movie1 ={
-    "Title": "Amazing Spiderman Syndrome",
-    "Year": "2012",
-    "imdbID": "tt2586634",
-    "Type": "movie",
-    "Poster": "N/A"
-}
+// const movie1 ={
+//     "Title": "Amazing Spiderman Syndrome",
+//     "Year": "2012",
+//     "imdbID": "tt2586634",
+//     "Type": "movie",
+//     "Poster": "N/A"
+// }
 
 const App = () => {
 
@@ -48,7 +48,7 @@ const [searchTerm, setSearchTerm] = useState('');
                 <img 
                     src={SearchIcon}
                     alt="search"
-                    onClick={() => {}}
+                    onClick={() => searchMovies(searchTerm)}
                 />
             </div>
 
